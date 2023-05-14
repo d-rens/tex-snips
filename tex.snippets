@@ -13,27 +13,13 @@ endglobal
 
 
 snippet template "Basic template" b
-\documentclass[a4paper]{article}
+\documentclass{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage[dutch]{babel}
+\usepackage[a4paper,margin=3cm]{geometry}
+%\usepackage[ngerman]{babel}
 \usepackage{amsmath, amssymb}
 
-
-% figure support
-\usepackage{import}
-\usepackage{xifthen}
-\pdfminorversion=7
-\usepackage{pdfpages}
-\usepackage{transparent}
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./figures/}{#1.pdf_tex}
-}
-
-\pdfsuppresswarningpagegroup=1
+\setlength{\parskip}{0pt}
 
 \begin{document}
 	$0
@@ -65,9 +51,9 @@ endsnippet
 snippet fig "Figure environment" b
 \begin{figure}[${1:htpb}]
 	\centering
-	${2:\includegraphics[width=0.8\textwidth]{$3}}
-	\caption{${4:$3}}
-	\label{fig:${5:${3/\W+/-/g}}}
+	${2:\includegraphics[width=${3:0.8}\textwidth]{$4}}
+	\caption{${5:$4}}
+	\label{fig:${6:${4/\W+/-/g}}}
 \end{figure}
 endsnippet
 
@@ -101,11 +87,6 @@ snippet =< "implied by" Ai
 \impliedby
 endsnippet
 
-context "math()"
-snippet iff "iff" Ai
-\iff
-endsnippet
-
 snippet mk "Math" wA
 $${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
@@ -124,7 +105,7 @@ endsnippet
 snippet ali "Align" bA
 \begin{align*}
 	${1:${VISUAL}}
-.\end{align*}
+\end{align*}
 endsnippet
 
 
@@ -169,11 +150,6 @@ snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 endsnippet
 
 
-snippet sympy "sympyblock " w
-sympy $1 sympy$0
-endsnippet
-
-priority 10000
 snippet 'sympy(.*)sympy' "sympy" wr
 `!p
 from sympy import *
@@ -185,20 +161,6 @@ snip.rv = eval('latex(' + match.group(1).replace('\\', '').replace('^', '**').re
 `
 endsnippet
 
-priority 1000
-snippet math "mathematicablock" w
-math $1 math$0
-endsnippet
-
-priority 10000
-snippet 'math(.*)math' "math" wr
-`!p
-import subprocess
-code = match.group(1)
-code = 'ToString[' + code + ', TeXForm]'
-snip.rv = subprocess.check_output(['wolframscript', '-code', code])
-`
-endsnippet
 
 snippet == "equals" iA
 &= $1 \\\\
@@ -308,7 +270,7 @@ snippet td "to the ... power" iA
 ^{$1}$0
 endsnippet
 
-context "math()"
+dontext "math()"
 snippet rd "to the ... power" iA
 ^{($1)}$0
 endsnippet

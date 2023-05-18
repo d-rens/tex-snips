@@ -12,6 +12,7 @@ def env(name):
 endglobal
 
 
+
 snippet template "Basic template" b
 \documentclass{article}
 
@@ -26,11 +27,29 @@ snippet template "Basic template" b
 \end{document}
 endsnippet
 
+
+snippet book "Basic book template" b
+\documentclass{book}
+
+%\usepackage[a4paper,margin=3cm]{geometry}
+%\usepackage[ngerman]{babel}
+\usepackage{libertine}
+
+
+\begin{document}
+	$0
+\end{document}
+endsnippet
+
+
+
+
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
 	$0
 \\end{$1}
 endsnippet
+
 
 priority 100
 snippet ... "ldots" iA
@@ -47,6 +66,18 @@ snippet table "Table environment" b
 	\end{tabular}
 \end{table}
 endsnippet
+
+
+
+snippet inc "Figure environment" b
+\begin{figure}[${1:htpb}]
+	\centering
+		${2:\incfig{$3}}
+	\caption{${5:$4}}
+	\label{fig:${6:${4/\W+/-/g}}}
+\end{figure}
+endsnippet
+
 
 snippet fig "Figure environment" b
 \begin{figure}[${1:htpb}]
@@ -106,6 +137,12 @@ snippet ali "Align" bA
 \begin{align*}
 	${1:${VISUAL}}
 \end{align*}
+endsnippet
+
+
+context "math()"
+snippet vec "vector" iA
+\vec{$1}
 endsnippet
 
 
@@ -270,7 +307,7 @@ snippet td "to the ... power" iA
 ^{$1}$0
 endsnippet
 
-dontext "math()"
+context "math()"
 snippet rd "to the ... power" iA
 ^{($1)}$0
 endsnippet

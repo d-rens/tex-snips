@@ -41,6 +41,17 @@ snippet book "Basic book template" b
 \end{document}
 endsnippet
 
+
+snippet b "bold" b
+\textbf{$1}
+endsnippet
+
+
+snippet i "italic" b
+\textit{$1}
+endsnippet
+
+
 snippet lipsum "filler text" b
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 endsnippet
@@ -317,7 +328,7 @@ snippet cb "^3" i
 endsnippet
 
 #context "math()"
-snippet td "to the ... power" i
+snippet ^^ "to the ... power" iA
 ^{$1}$0
 endsnippet
 
@@ -454,7 +465,7 @@ endsnippet
 
 priority 100
 #context "math()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwA
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|perp)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -466,7 +477,7 @@ endsnippet
 
 priority 200
 #context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -517,7 +528,7 @@ snippet ~~ "~" iA
 endsnippet
 
 #context "math()"
-snippet set "set" wA
+snippet set "set" w
 \\{$1\\} $0
 endsnippet
 
@@ -596,7 +607,7 @@ snippet tt "text" iA
 endsnippet
 
 ##context "math()"
-snippet case "cases" wA
+snippet case "cases" w
 \begin{cases}
 	$1
 \end{cases}

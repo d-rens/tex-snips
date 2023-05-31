@@ -113,6 +113,20 @@ snippet table "Table environment" b
 \end{table}
 endsnippet
 
+snippet booktab "booktab table" bA
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{$2}
+    \toprule
+	$3 \\
+	\midrule
+
+	\bottomrule
+\end{tabular}
+  \caption{$1}
+\end{table}
+endsnippet
+
 
 
 snippet inc "Figure environment" b
@@ -159,6 +173,10 @@ endsnippet
 
 snippet => "implies" Ai
 \implies
+endsnippet
+
+snippet ~> "leadsto" Ai
+\leadsto
 endsnippet
 
 snippet =< "implied by" Ai
@@ -571,7 +589,7 @@ endsnippet
 
 
 #context "math()"
-snippet cc "subset" Ai
+snippet cc "subset" i
 \subset 
 endsnippet
 
@@ -580,7 +598,7 @@ snippet notin "not in " iA
 endsnippet
 
 #context "math()"
-snippet inn "in " iA
+snippet inn "in " i
 \in 
 endsnippet
 
@@ -635,7 +653,7 @@ _\text{$1} $0
 endsnippet
 
 #context "math()"
-snippet tt "text" iA
+snippet TT "text" iA
 \text{$1}$0
 endsnippet
 

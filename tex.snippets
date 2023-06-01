@@ -12,6 +12,14 @@
 #endglobal
 
 
+# temporary snippets 
+# # for statistics:
+snippet barx "overline x" iA
+\overline{x} $1
+endsnippet
+
+
+
 
 snippet template "Basic template" b
 \documentclass{article}
@@ -90,6 +98,10 @@ snippet sssec "section" b
 \subsubsection{$1}
 endsnippet
 
+snippet ppp "paragraph" bA
+\paragraph{$1}
+endsnippet
+
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
 	$0
@@ -115,15 +127,15 @@ endsnippet
 
 snippet booktab "booktab table" bA
 \begin{table}[htbp]
-  \centering
-  \begin{tabular}{$2}
-    \toprule
-	$3 \\
-	\midrule
+	\centering
+	\begin{tabular}{$2}
+		\toprule
+		$3
+		\midrule
 
-	\bottomrule
-\end{tabular}
-  \caption{$1}
+		\bottomrule
+	\end{tabular}
+	\caption{$1}
 \end{table}
 endsnippet
 
@@ -364,7 +376,7 @@ snippet part "d/dx" w
 endsnippet
 
 #context "math()"
-snippet sq "\sqrt{}" i
+snippet sqrt "\sqrt{}" iA
 \sqrt{${1:${VISUAL}}} $0
 endsnippet
 

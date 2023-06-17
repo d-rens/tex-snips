@@ -19,8 +19,6 @@ snippet barx "overline x" iA
 endsnippet
 
 
-
-
 snippet template "Basic template" b
 \documentclass{article}
 
@@ -381,12 +379,12 @@ snippet sqrt "\sqrt{}" iA
 endsnippet
 
 ##context "math()"
-snippet sr "^2" i
+snippet srr "^2" iA
 ^2
 endsnippet
 
 #context "math()"
-snippet cb "^3" i
+snippet stt "^3" iA
 ^3
 endsnippet
 
@@ -528,7 +526,7 @@ endsnippet
 
 priority 100
 #context "math()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|perp)' "ln" rwA
+snippet '(?<!\\)(cos|arccot|cot|csc|ln|log|perp)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -540,7 +538,7 @@ endsnippet
 
 priority 200
 #context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|zeta)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -665,7 +663,7 @@ _\text{$1} $0
 endsnippet
 
 #context "math()"
-snippet TT "text" iA
+snippet TEXT "text" iA
 \text{$1}$0
 endsnippet
 
@@ -720,9 +718,9 @@ Let $\Omega \subset \C$ be open.
 endsnippet
 
 
-snippet HH "H" iA
-\mathbb{H}
-endsnippet
+#snippet HH "H" iA
+#\mathbb{H}
+#endsnippet
 
 snippet DD "D" iA
 \mathbb{D}

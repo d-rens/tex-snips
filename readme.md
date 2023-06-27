@@ -1,3 +1,15 @@
+# Notes on this fork
+
+I have changed some things, disabled others...
+
+The main change is that i am not using the 'math environment' variable, because i have not yet found a way to make it work with neovim instead of vim. 
+Out of this i added letters to snippets to not use them accidentaly, it is a bit odd, but it works.
+
+For example, `sr` was used to do `^2` but because `sr` is also used a lot in text i changed it to `srr`, similar with a lot of other snippets.
+
+The quality of them decrese when doing that, so i am looking into making it work, it's probably possible.
+
+
 # Vim + LaTeX snippets setup
 
 *[How I'm able to take notes in mathematics lectures using LaTeX and Vim](https://castel.dev/post/lecture-notes-1/)*

@@ -8,7 +8,6 @@ def comment():
 def env(name):
     [x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
     return x != '0' and x != '0'
-
 endglobal
 
 
@@ -170,7 +169,6 @@ snippet =< "implied by" Ai
 \impliedby
 endsnippet
 
-context "math()"
 snippet mk "Math" wA
 $${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
@@ -609,6 +607,11 @@ snippet || "mid" iA
 endsnippet
 
 
+snippet SET "set" iA
+\mathbf{$1}$0
+endsnippet
+
+
 context "math()"
 snippet cc "subset" i
 \subset 
@@ -741,7 +744,6 @@ endsnippet
 snippet letw "let omega" iA
 Let $\Omega \subset \C$ be open.
 endsnippet
-
 
 snippet HH "H" iA
 \mathbb{H}

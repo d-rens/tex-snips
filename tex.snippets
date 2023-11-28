@@ -26,15 +26,85 @@ snippet template "Basic template" b
 endsnippet
 
 
+# logic stuff & arrows
+context "math()"
+snippet llra "Long left right arrow" iA
+\Longleftrightarrow
+endsnippet
+
+priority 300
+context "math()"
+snippet --> "long normal arrow"
+\longrightarrow
+endsnippet
+
+priority 100
+context "math()"
+snippet -> "to" iA
+\to 
+endsnippet
+
+priority 200
+context "math()"
+snippet <-> "leftrightarrow" iA
+\leftrightarrow
+endsnippet
+
+context "math()"
+snippet !> "mapsto" iA
+\mapsto 
+endsnippet
+
+context "math()"
+snippet or "logic or" iA
+\vee
+endsnippet
+
+context "math()"
+snippet OR "like thing in big" iA
+\bigvee
+endsnippet
+
+context "math()"
+snippet and "logic and" iA
+\wedge
+endsnippet
+
+context "math()"
+snippet AND "logic and in big" iA
+\bigwedge
+endsnippet
+
+context "math()"
+snippet not "logical negation" iA
+\neg 
+endsnippet
+
+priority 100
+context "math()"
+snippet xor "logical xor"
+\oplus
+endsnippet
+
+
+
+# end of logic stuff
+
+
 snippet "([auoAUO])e" "umlaute" ri
 \"`!p snip.rv=match.group(1)`
 endsnippet
 
 
-snippet ssss "ae" iA
-\ss$1
+snippet sS "sss" iA
+\ss{}$1
 endsnippet
 
+
+context "math()"
+snippet bino "binomial coefficient" iA
+\binom{$1}{$2} $0
+endsnippet
 
 context "math()"
 snippet quad "quad" iA
@@ -552,22 +622,6 @@ snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|zeta)' "ln" rwA
 endsnippet
 
 
-priority 100
-context "math()"
-snippet -> "to" iA
-\to 
-endsnippet
-
-priority 200
-context "math()"
-snippet <-> "leftrightarrow" iA
-\leftrightarrow
-endsnippet
-
-context "math()"
-snippet !> "mapsto" iA
-\mapsto 
-endsnippet
 
 context "math()"
 snippet invs "inverse" iA
@@ -622,7 +676,7 @@ snippet notin "not in " iA
 endsnippet
 
 context "math()"
-snippet inn "in " i
+snippet IN "in " iA
 \in 
 endsnippet
 

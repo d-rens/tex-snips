@@ -10,6 +10,7 @@ def env(name):
     return x != '0' and x != '0'
 endglobal
 
+###################### templates
 
 snippet template "Basic template" b
 \documentclass{article}
@@ -26,7 +27,39 @@ snippet template "Basic template" b
 endsnippet
 
 
-# logic stuff & arrows
+snippet beamer "Beamer template" b
+\documentclass{beamer}
+
+\usepackage{booktabs}
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+
+\usetheme{metropolis}
+
+\author{$2}
+\date{${3:\today}}
+
+
+\title{$1}
+
+
+\begin{document}
+	$0
+\end{document}
+endsnippet
+
+
+snippet frame "Beamer slide" iA
+\begin{frame}{${1:title}}
+$0
+
+\end{frame}
+endsnippet
+
+##############################
+
+
+###################### logic stuff & arrows
 context "math()"
 snippet llra "Long left right arrow" iA
 \Longleftrightarrow
@@ -85,10 +118,9 @@ context "math()"
 snippet xor "logical xor"
 \oplus
 endsnippet
+################################################# 
 
 
-
-# end of logic stuff
 
 
 snippet "([auoAUO])e" "umlaute" ri

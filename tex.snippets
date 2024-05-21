@@ -12,7 +12,87 @@ endglobal
 
 ###################### templates
 
-snippet template "Basic template" b
+snippet preamble "preamble" b
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Preamble %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[a4paper, margin=3cm]{geometry}
+
+\usepackage{abstract}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{parskip}
+
+% for bibliograpy
+\usepackage{biblatex}
+\usepackage{csquotes}
+
+
+% mostly got this of https://github.com/XYQuadrat
+\tcbset {
+    base/.style={
+        arc=0mm, 
+        bottomtitle=0.5mm,
+        boxrule=0mm,
+        colbacktitle=black!10!white, 
+        coltitle=black, 
+        fonttitle=\bfseries, 
+        left=2.5mm,
+        leftrule=1mm,
+        right=3.5mm,
+        title={#1},
+        toptitle=0.75mm, 
+    }
+}
+
+% Define new colorbox for research question
+\newtcolorbox{ff}[1]{
+    colframe=black,
+    base={#1}
+}
+
+
+% to declare the task (delete after finishing)
+\newtcolorbox{aufgabe}[1]{
+    colframe=red,
+    base={#1}
+}
+
+
+\definecolor{blau}{rgb}{0.4, 0.5, 1}
+\newtcolorbox{mainbox}[1]{
+  colframe=blau, 
+  base={#1}
+}
+
+\newtcolorbox{subbox}[1]{
+  colframe=black!40!white,
+  base={#1}
+}
+
+\newtcolorbox{subsubbox}{
+        arc=0mm, 
+        bottomtitle=0.5mm,
+        boxrule=0mm,
+        colbacktitle=black!10!white, 
+        colframe=black!30!white,
+        coltitle=black, 
+        fonttitle=\bfseries, 
+        left=2.5mm,
+        leftrule=1mm,
+        right=3.5mm,
+        toptitle=0.75mm, 
+}
+endsnippet
+
+
+
+snippet template-small "Basic template" b
 \documentclass{article}
 
 \usepackage[a4paper,margin=3cm]{geometry}
@@ -235,7 +315,7 @@ endsnippet
 snippet fig "Figure environment" b
 \begin{figure}[${1:htpb}]
 	\centering
-	${2:\includegraphics[width=${3:0.8}\textwidth]{$4}}
+	${2:\includegraphics[width=${3:0.8}\linewidth]{$4}}
 	\caption{${5:$4}}
 	\label{fig:${6:${4/\W+/-/g}}}
 \end{figure}
